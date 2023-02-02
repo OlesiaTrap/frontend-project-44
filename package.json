@@ -2,6 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/OlesiaTrap/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/OlesiaTrap/frontend-project-44/actions)",
+  module: "type",
   "main": "index.js",
   "bin": {
     "code": "bin/brain-games.js"
