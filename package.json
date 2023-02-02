@@ -1,8 +1,8 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/OlesiaTrap/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/OlesiaTrap/frontend-project-44/actions)",
-  module: "type",
+  "description": "",
+  "module": "type",
   "main": "index.js",
   "bin": {
     "code": "bin/brain-games.js"
@@ -20,4 +20,7 @@
     "url": "https://github.com/OlesiaTrap/frontend-project-44/issues"
   },
   "homepage": "https://github.com/OlesiaTrap/frontend-project-44#readme"
+},
+	"bin": {
+  "brain-games": "bin/brain-games.js"
 }
