@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/OlesiaTrap/frontend-project-44#readme",
   "type": "module",
-	
-	"bin": {
-  "brain-games": "bin/brain-games.js"
-}
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
 }
