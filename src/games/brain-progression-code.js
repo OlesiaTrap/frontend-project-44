@@ -8,13 +8,14 @@ const randomArray = (num1, numCount, arrayLength) => {
     arrayProgression.push(randomNumber);
     randomNumber += numCount;
   }
+  arrayProgression.push(randomNumber);
   return arrayProgression;
 };
 
 const startRound = () => {
   const arrayNum1 = Math.round(Math.random() * 100);
   const arrayLength = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
-  const arrayNumCount = Math.round(Math.random() * 9);
+  const arrayNumCount = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
   const arrayRandomProg = randomArray(arrayNum1, arrayNumCount, arrayLength);
   const arrayEmptyNum = Math.round(Math.random() * arrayRandomProg.length - 1);
   const correctAnswer = arrayRandomProg[arrayEmptyNum];
