@@ -4,8 +4,8 @@ const rulesGame = 'Answer "yes" if the number is even, otherwise answer "no". ';
 const isEven = (number) => (number % 2 === 0);
 
 const startRound = () => {
-  const RandomNumber = Math.round(Math.random() * 100);
-  const num = RandomNumber;
+  const randomNumber = Math.round(Math.random() * 100);
+  const num = randomNumber;
   const correctAnswer = (isEven(num)) ? 'yes' : 'no';
   return [num, correctAnswer];
 };
