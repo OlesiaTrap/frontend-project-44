@@ -11,7 +11,7 @@ const isPrime = (number) => {
   return true;
 };
 const startRound = () => {
-  const randomNumber = Math.round(Math.random() * 100);
+  const randomNumber = Math.round(Math.random() * 98) + 2;
   const num = randomNumber;
   const correctAnswer = (isPrime(num)) ? 'yes' : 'no';
   return [num, correctAnswer];
