@@ -17,7 +17,7 @@ const generateRoundData = () => {
   const arrayLength = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
   const arrayNumCount = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
   const arrayRandomProg = randomArray(arrayNum1, arrayNumCount, arrayLength);
-  const arrayEmptyNum = Math.round(Math.random() * arrayRandomProg.length - 1);
+  const arrayEmptyNum = Math.round(Math.random() * (arrayRandomProg.length - 1));
   const correctAnswer = arrayRandomProg[arrayEmptyNum];
   arrayRandomProg[arrayEmptyNum] = '..';
   const question = arrayRandomProg.join(' ');
