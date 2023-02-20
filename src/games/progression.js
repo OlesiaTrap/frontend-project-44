@@ -1,6 +1,6 @@
 import startBrainGame from '../index.js';
 
-const rulesGame = 'What number is missing in the progression?';
+const gameInstruction = 'What number is missing in the progression?';
 const randomArray = (num1, numCount, arrayLength) => {
   const arrayProgression = [];
   let randomNumber = num1;
@@ -12,7 +12,7 @@ const randomArray = (num1, numCount, arrayLength) => {
   return arrayProgression;
 };
 
-const startRound = () => {
+const generateRoundData = () => {
   const arrayNum1 = Math.round(Math.random() * 100);
   const arrayLength = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
   const arrayNumCount = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
@@ -24,7 +24,6 @@ const startRound = () => {
   return [question, String(correctAnswer)];
 };
 
-const progressionGame = () => {
-  startBrainGame(rulesGame, startRound);
-};
-export default progressionGame;
+const startProgressionGame = () => startBrainGame(gameInstruction, generateRoundData);
+
+export default startProgressionGame;
