@@ -1,26 +1,27 @@
 import startBrainGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const gameInstruction = 'What number is missing in the progression?';
-const randomArray = (num1, numCount, arrayLength) => {
-  const arrayProgression = [];
-  let randomNumber = num1;
-  for (let i = 1; i < arrayLength; i += 1) {
-    arrayProgression.push(randomNumber);
-    randomNumber += numCount;
+const generateProgression = (startNumber, step, length) => {
+  const progression = [startNumber];
+  // from linter - error  Assignment to function parameter 'startNumber'
+  let elemProgression = startNumber;
+  for (let i = 1; i < length; i += 1) {
+    elemProgression += step;
+    progression.push(elemProgression);
   }
-  arrayProgression.push(randomNumber);
-  return arrayProgression;
+  return progression;
 };
 
 const generateRoundData = () => {
-  const arrayNum1 = Math.round(Math.random() * 100);
-  const arrayLength = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
-  const arrayNumCount = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-  const arrayRandomProg = randomArray(arrayNum1, arrayNumCount, arrayLength);
-  const arrayEmptyNum = Math.round(Math.random() * (arrayRandomProg.length - 1));
-  const correctAnswer = arrayRandomProg[arrayEmptyNum];
-  arrayRandomProg[arrayEmptyNum] = '..';
-  const question = arrayRandomProg.join(' ');
+  const randomStartNum = getRandomNumber();
+  const randomLength = getRandomNumber(5, 10);
+  const randomStep = getRandomNumber(1, 10);
+  const randomProgression = generateProgression(randomStartNum, randomStep, randomLength);
+  const randomEmptyNum = getRandomNumber(0, randomProgression.length - 1);
+  const correctAnswer = randomProgression[randomEmptyNum];
+  randomProgression[randomEmptyNum] = '..';
+  const question = randomProgression.join(' ');
   return [question, String(correctAnswer)];
 };
 

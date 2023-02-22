@@ -1,4 +1,5 @@
 import startBrainGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const gameInstruction = 'What is the result of the expression?';
 
@@ -14,18 +15,18 @@ const calculate = (operation, num1, num2) => {
       throw new Error(`Unknown order state: '${operation}!'`);
   }
 };
-const hasRandomOperations = () => {
+const getRandomOperator = () => {
   const operators = ['-', '+', '*'];
-  const operatorIndex = Math.floor(Math.random() * operators.length);
+  const operatorIndex = getRandomNumber(0, operators.length - 1);
   return operators[operatorIndex];
 };
 
 const generateRoundData = () => {
-  const randomNumber1 = Math.round(Math.random() * 100);
-  const randomNumber2 = Math.round(Math.random() * 100);
-  const operators = hasRandomOperations();
-  const correctAnswer = calculate(operators, randomNumber1, randomNumber2).toString();
-  const question = `${randomNumber1} ${operators} ${randomNumber2}`;
+  const randomNumber1 = getRandomNumber();
+  const randomNumber2 = getRandomNumber();
+  const operator = getRandomOperator();
+  const correctAnswer = calculate(operator, randomNumber1, randomNumber2).toString();
+  const question = `${randomNumber1} ${operator} ${randomNumber2}`;
   return [question, correctAnswer];
 };
 const startCalcGame = () => startBrainGame(gameInstruction, generateRoundData);
